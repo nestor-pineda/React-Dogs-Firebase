@@ -11,13 +11,17 @@ export const StyledFooter = styled.footer`
   padding: 1em;
   box-sizing: border-box;
   & .footer-logo {
-    font-size: ${(props) => props.theme.fontSizes.medium};
+    font-size: ${(props) => props.theme.fontSizes.Large};
     color: ${(props) => props.theme.colors.color1};
     margin: 0px;
+    text-transform: uppercase;
+    text-align: center;
   }
+
   & .footer-copy {
-    font-size: ${(props) => props.theme.fontSizes.small};
+    font-size: ${(props) => props.theme.fontSizes.xsmall};
     color: ${(props) => props.theme.colors.color1};
     margin: 10px;
+    text-align: center;
   }
 `;

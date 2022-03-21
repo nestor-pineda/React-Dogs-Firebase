@@ -1,4 +1,4 @@
-import Home from "../pages/Home";
+import Home from "../pages/Home/Home";
 import Single from "../pages/Single";
 import Liked from "../pages/Liked";
 
