@@ -1,5 +1,5 @@
 import Home from "../pages/Home/Home";
-import Single from "../pages/Single";
+import Single from "../pages/Single/Single";
 import Liked from "../pages/Liked";
 
 const routes = [
