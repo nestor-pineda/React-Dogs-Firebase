@@ -15,7 +15,7 @@ export const StyledCard = styled.div`
   & .image {
     width: 50%;
     aspect-ratio: 1/1;
-    background-color: beige;
+    background: #fff center center/cover no-repeat;
     border-radius: 100px;
   }
   & .info {
