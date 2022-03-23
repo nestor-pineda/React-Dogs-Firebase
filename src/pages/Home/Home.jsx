@@ -12,16 +12,16 @@ const Home = () => {
     const getAnimals = async () => {
       const data = await getDocs(animalsCollectionRef);
       setMyAnimals(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-      // console.log(myData.docs[1].data());
     };
-
     getAnimals();
   }, []);
 
+  console.log(myAnimals[0]);
+
   return (
     <StyledHome>
-      {myAnimals.map((item) => {
-        return <Card key={item.id} item={item} />;
+      {myAnimals.map((item, index) => {
+        return <Card key={index} item={item} index={index} />;
       })}
     </StyledHome>
   );
