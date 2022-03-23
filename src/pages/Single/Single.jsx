@@ -19,14 +19,8 @@ const Single = () => {
     getAnimals();
   }, []);
 
-  // console.log(myAnimals[slug].nombre);
-
-  // const animal = myAnimals[slug];
-  // console.log(animal.nombre);
-
   return (
     <div>
-      <p>his is the single page {slug}</p>
       {myAnimals && <Info myAnimals={myAnimals[slug]} />}
       <p>Liked dogs</p>
       <LikedDogs />

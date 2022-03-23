@@ -28,13 +28,3 @@ const Home = () => {
 };
 
 export default Home;
-
-{
-  /* <div key={item.id}>
-            <h1>Name: {item.nombre} </h1>
-            <p>Age: {item.edad} </p>
-            <p>Raza: {item.raza} </p>
-            <p>Age: {item.desc} </p>
-            <img src={`/images/${item.imagen}`} alt="perros" />
-          </div> */
-}
