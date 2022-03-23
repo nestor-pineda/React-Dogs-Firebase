@@ -1,8 +1,9 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { collection, getDocs } from "@firebase/firestore";
-import Info from "../Info/info";
+import Info from "../../components/Info/info";
 import db from "../../firebase/firebaseConfig";
+import LikedDogs from "../../components/LikedDogs/LikedDogs";
 
 const Single = () => {
   const { slug } = useParams();
@@ -27,13 +28,8 @@ const Single = () => {
     <div>
       <p>his is the single page {slug}</p>
       {myAnimals && <Info myAnimals={myAnimals[slug]} />}
-
-      {/* 
-      <p>Nombre: {myAnimals[slug].nombre} </p>
-      <p>Nombre: {myAnimals[slug].edad} </p>
-      <p>Raza: {myAnimals[slug].raza}</p>
-      <p>Raza: {myAnimals[slug].desc}</p>
-      <img src={`/images/${myAnimals[slug].imagen}`} alt="perros" /> */}
+      <p>Liked dogs</p>
+      <LikedDogs />
     </div>
   );
 };
