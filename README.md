@@ -14,9 +14,7 @@ Para este proyecto he usado:
 
  - Mobile First responsive design
 
-Para ejecutar este proyecto, tras haber descargado el repositorio, es necesario hacer 
-
-### git install. 
+Para ejecutar este proyecto, tras haber descargado el repositorio, es necesario hacer ```git install```. 
 
 Aunque he creado un .env.local con las variables de conexión de la Base de Datos de Firebase, las he dejado comentadas y no es necesario usarlas. 
 
