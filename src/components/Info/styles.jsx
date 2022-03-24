@@ -54,6 +54,7 @@ export const StyledInfo = styled.div`
     & .info-dog__wrapper {
       max-width: 1200px;
       grid-template-columns: 1fr 1fr;
+      padding: 2em;
       gap: 2em;
       & .info-dog__image {
         width: 100%;

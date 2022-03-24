@@ -1,20 +1,20 @@
 import { useContext } from "react";
 import { LikeContext } from "../../context/likeContext";
-import Card from "../Card/Card";
-import { StyledLiked } from "./styles";
+import CardLiked from "../CardLiked/CardLiked";
+import { StyledLiked, StyledWrapper } from "./styles";
 
 const LikedDogs = () => {
   const { likedItems } = useContext(LikeContext);
 
   return (
-    <div>
-      <h1>Liked Dogs...</h1>
+    <StyledWrapper>
+      <h1>Liked Dogs</h1>
       <StyledLiked>
         {likedItems.map((item, index) => {
-          return <Card key={index} item={item} index={index} />;
+          return <CardLiked key={index} item={item} index={index} />;
         })}
       </StyledLiked>
-    </div>
+    </StyledWrapper>
   );
 };
 

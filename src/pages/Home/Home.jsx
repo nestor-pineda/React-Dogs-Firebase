@@ -1,8 +1,9 @@
 import Card from "../../components/Card/Card";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useLayoutEffect } from "react";
 import { collection, getDocs } from "@firebase/firestore";
 import db from "../../firebase/firebaseConfig";
 import { StyledHome } from "./styles";
+import { gsap } from "gsap";
 
 const Home = () => {
   const [myAnimals, setMyAnimals] = useState([]);
@@ -16,10 +17,15 @@ const Home = () => {
     getAnimals();
   }, []);
 
-  console.log(myAnimals[0]);
+  // GSAP
+  const card = document.querySelector(".card");
+
+  useLayoutEffect(() => {
+    gsap.from(card, { duration: 1, y: 50, opacity: 0 });
+  }, [myAnimals]);
 
   return (
-    <StyledHome>
+    <StyledHome className="card">
       {myAnimals.map((item, index) => {
         return <Card key={index} item={item} index={index} />;
       })}

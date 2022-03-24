@@ -1,9 +1,10 @@
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useLayoutEffect } from "react";
 import { collection, getDocs } from "@firebase/firestore";
-import Info from "../../components/Info/info";
+import Info from "../../components/Info/Info";
 import db from "../../firebase/firebaseConfig";
 import LikedDogs from "../../components/LikedDogs/LikedDogs";
+import { gsap } from "gsap";
 
 const Single = () => {
   const { slug } = useParams();
@@ -19,10 +20,16 @@ const Single = () => {
     getAnimals();
   }, []);
 
+  // GSAP
+  const card = document.querySelector(".dog-info");
+
+  useLayoutEffect(() => {
+    gsap.from(card, { duration: 1, y: 50, opacity: 0 });
+  }, [myAnimals]);
+
   return (
-    <div>
+    <div className="dog-info">
       {myAnimals && <Info myAnimals={myAnimals[slug]} />}
-      <p>Liked dogs</p>
       <LikedDogs />
     </div>
   );

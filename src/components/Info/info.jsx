@@ -1,9 +1,16 @@
 import { useContext } from "react";
 import { LikeContext } from "../../context/likeContext";
 import { StyledInfo } from "./styles";
+import { useRef } from "react";
 
 const Info = ({ myAnimals }) => {
-  // console.log(myAnimals.nombre);
+  let btnRef = useRef();
+  const onBtnClick = (e) => {
+    setLikedItems([...likedItems, myAnimals]);
+    if (btnRef.current) {
+      btnRef.current.setAttribute("disabled", "disabled");
+    }
+  };
 
   const { likedItems, setLikedItems } = useContext(LikeContext);
 
@@ -22,7 +29,7 @@ const Info = ({ myAnimals }) => {
           <p className="info-dog__paragraph2">
             <b>Descripción:</b> {myAnimals.desc}
           </p>
-          <button className="button" onClick={() => setLikedItems([...likedItems, myAnimals])}>
+          <button className="button" ref={btnRef} onClick={onBtnClick}>
             Like ❤
           </button>
         </div>
