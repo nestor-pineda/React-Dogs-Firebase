@@ -1,4 +1,4 @@
-# H1 - title
+# App de Animales
 
 ![Placeholder Image](mockup.gif)
 
